@@ -1,0 +1,78 @@
+// import './App.css';
+// import Header from "./component/layout/Header/Header"
+// import { BrowserRouter as Router ,Route,Routes} from 'react-router-dom';
+// import WebFont from "webfontloader"
+// import React from "react"
+// import Footer from "./component/layout/Footer/Footer.js"
+// import Home from "./component/Home/Home.js";
+// import Loader from './component/layout/Loder/Loder';
+// import ProductDetails from "./component/Product/ProductDetails.js";
+// // import Products from "./component/Product/Products";
+// // import Search from "./component/Product/Search";
+// // import LoginSignUp from "./component/User/LoginSignUp";
+// // import store from "./store";
+// function App() {
+//   React.useEffect(() => {
+//     WebFont.load({
+//       google: {
+//         families: ["Roboto", "Droid Sans", "Chilanka"],
+//       },
+//     });
+
+//     // store.dispatch(loadUser());
+//     // getStripeApiKey();
+//   }, []);
+//   return (
+//     <Router>
+//       <Header/>
+//       <Routes>
+//         <Route exact path='/' Component={Home}/>
+//         <Route exact path='/product/:id' Component={ProductDetails}/>
+//         {/* <Route path="/product/:id" component={ProductDetails} /> */}
+//       </Routes>
+//       <Footer/>  
+//     </Router>
+//   );
+// }
+
+// export default App;
+
+
+import './App.css';
+import Header from "./component//layout/Header/Header";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import WebFont from "webfontloader";
+import React from "react";
+import Footer from "./component/layout/Footer/Footer.js";
+import Home from "./component/Home/Home.js";
+import ProductDetails from "./component/Product/ProductDetails.js";
+import Products from "./component/Product/Product.js"
+import Search from "./component/Product/Search.js"
+import LoginSIgnU from "./component/User/LoginSignUp"
+function App() {
+  React.useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ["Roboto", "Droid Sans", "Chilanka"],
+      },
+    });
+  }, []);
+
+  return ( 
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:keyword" element={<Products />} />
+        
+        <Route path="/search" element={<Search />} />
+        <Route path="/login" element={<LoginSIgnU />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
+}
+
+export default App;
